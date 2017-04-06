@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 class CarMakers extends Component {
+
   render() {
+    const carMakers = JSON.parse(require('./../../car_makers.json'));
+    const names = carMakers.map((i) => i.make);
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className="Main">
+        <div className="header">
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">

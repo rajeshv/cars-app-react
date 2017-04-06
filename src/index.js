@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CarMakers from './CarMakers';
-import './index.css';
+import Router from './routes';
 
 ReactDOM.render(
-  <CarMakers />,
+  Router,
   document.getElementById('root')
 );
