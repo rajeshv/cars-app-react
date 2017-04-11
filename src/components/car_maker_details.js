@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Jumbotron, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class CarMakerDetails extends Component {
   render() {
@@ -11,8 +11,15 @@ class CarMakerDetails extends Component {
 
     const carmakerNode = (
       <Jumbotron>
-        <h3>Hello, world!</h3>
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <h4>{carmaker.name}</h4>
+        <h4>Models:</h4>
+        <ListGroup>
+            {carmaker.models.map((model, index)=>
+              <ListGroupItem key={index}>
+                {model.name}
+              </ListGroupItem>
+            )}
+        </ListGroup>
       </Jumbotron>);
     return (carmakerNode);
   }
