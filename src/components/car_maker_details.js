@@ -10,17 +10,22 @@ class CarMakerDetails extends Component {
     console.log(carmaker);
 
     const carmakerNode = (
-      <Jumbotron>
+      <div>
         <h4>{carmaker.name}</h4>
         <h4>Models:</h4>
         <ListGroup>
             {carmaker.models.map((model, index)=>
               <ListGroupItem key={index}>
                 {model.name}
+                { model.years.map((year, index)=>
+                  <ListGroupItem key={index}>
+                    {year.year}
+                  </ListGroupItem>
+                )}
               </ListGroupItem>
             )}
         </ListGroup>
-      </Jumbotron>);
+      </div>);
     return (carmakerNode);
   }
 }
