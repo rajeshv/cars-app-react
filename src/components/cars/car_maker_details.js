@@ -39,15 +39,10 @@ class ModelDetails extends Component {
   }
 
   handleClick(){
-    if(!this.state.togglerOn){
-      this.setState({years: this.props._model.years});
-    }else{
-      this.setState({years: []});
-    }
-
-    this.setState(prevState => ({
-      togglerOn: !prevState.togglerOn
-    }));
+    
+    this.setState({years: (!this.state.togglerOn ?
+                           this.props._model.years: []),
+                   togglerOn: !this.state.togglerOn});
     
     console.log(this.state.years);
   }
